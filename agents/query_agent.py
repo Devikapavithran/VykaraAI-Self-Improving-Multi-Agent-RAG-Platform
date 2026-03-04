@@ -1,11 +1,14 @@
+import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage
 
 
 # LLM for rewriting queries
+
+
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",   # stable + cheap
-    temperature=0.2
+    model="gemini-2.0-flash",
+    google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 
