@@ -1,9 +1,13 @@
+import os
+import time
+import logging
+
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
 from fastapi import FastAPI, HTTPException, Header, Request
 from pydantic import BaseModel
 from src.pipeline import run_vykara
-import time
-import logging
-import os
 
 # -----------------------
 # CONFIG
