@@ -1,3 +1,4 @@
+
 import time
 import uuid
 import re
@@ -22,7 +23,7 @@ from src.utils.logger import logger
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
-
+FAISS_PATH = os.path.abspath("faiss_index")
 db = FAISS.load_local(
     "faiss_index",
     embeddings,
@@ -34,7 +35,6 @@ llm = ChatGoogleGenerativeAI(
     temperature=0,
     google_api_key=os.getenv("GOOGLE_API_KEY")
 )
-
 
 # --------------------------------------------------
 # COMPANY DETECTION
