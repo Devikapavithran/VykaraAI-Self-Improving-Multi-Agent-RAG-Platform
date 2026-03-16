@@ -24,8 +24,7 @@ embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-BASE_DIR = os.getcwd()
-FAISS_PATH = os.path.join(BASE_DIR, "faiss_index")
+FAISS_PATH = os.path.join(os.getcwd(), "faiss_index")
 
 db = FAISS.load_local(
     FAISS_PATH,
