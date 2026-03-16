@@ -23,9 +23,12 @@ from src.utils.logger import logger
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
-FAISS_PATH = os.path.abspath("faiss_index")
+
+BASE_DIR = os.getcwd()
+FAISS_PATH = os.path.join(BASE_DIR, "faiss_index")
+
 db = FAISS.load_local(
-    "faiss_index",
+    FAISS_PATH,
     embeddings,
     allow_dangerous_deserialization=True
 )
