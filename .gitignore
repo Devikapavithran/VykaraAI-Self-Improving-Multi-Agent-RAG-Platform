@@ -19,5 +19,3 @@ Thumbs.db
 # Logs
 *.log
 
-# FAISS index
-faiss_index/
